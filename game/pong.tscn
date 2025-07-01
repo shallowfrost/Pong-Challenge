@@ -41,6 +41,7 @@ func update_performance_stats():
 	var fps = Engine.get_frames_per_second()
 	@warning_ignore(\"incompatible_ternary\")
 	var frame_time = 1000.0 / fps if fps > 0 else 0  # in milliseconds
+	@warning_ignore(\"integer_division\")
 	var memory_usage = OS.get_static_memory_usage() / 1024 / 1024  # in MB
 
 	if fps_samples.size() > sample_window:
